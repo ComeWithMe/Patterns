@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Threading;
 
 namespace Patterns
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            IFigure figure = new Rectangle(30, 40);
-            IFigure clonedFigure = figure.Clone();
-            figure.GetInfo();
-            clonedFigure.GetInfo();
-
-            figure = new Circle(30);
-            clonedFigure = figure.Clone();
-            figure.GetInfo();
-            clonedFigure.GetInfo();
-
-            Console.Read();
+            var k = new Observable();
+            k.Add(new Observer());
+            k.Add(new Observer());
+            k.Add(new Observer());
+            k.Add(new Observer());
+            k.Notify();
         }
     }
 }
