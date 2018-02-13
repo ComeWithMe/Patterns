@@ -4,14 +4,13 @@ namespace Patterns
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            var k = new Observable();
-            k.Add(new Observer());
-            k.Add(new Observer());
-            k.Add(new Observer());
-            k.Add(new Observer());
-            k.Notify();
+            Pult pult = new Pult();
+            TV tv = new TV();
+            pult.SetCommand(new TVOnCommand(tv));
+            pult.PressButton();
+            pult.PressUndo();
         }
     }
 }
